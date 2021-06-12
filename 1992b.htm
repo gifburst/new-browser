@@ -1,0 +1,71 @@
+<HTML>
+<HEAD><TITLE>Cern line-mode www browser</TITLE></HEAD>
+<BODY BGCOLOR=#ffffff TEXT=#000000><TT>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+        <P ALIGN=right>Cern line-mode www browser</P>
+</HEAD>
+
+<!--
+UNIX(r) System V Release 4.0 (www0)<BR><BR>
+
+Last login: Thu Aug 14 20:36:01 from 204.221.58.92
+                Welcome to the World-Wide Web
+<P>
+-->
+This page is optimized for the Cern line-mode browser[1]<!--http://www.w3.org/LineMode/Browser.html-->.
+<BR>----------------<BR>
+<BR><BR>PAGES FROM THOSE DAYS<BR><BR>
+Between 1990 and 1992, when Tim Berners-Lee and his colleague Robert Caillau at Cern[2] developed what was to become a world-wide web, there was actually only one server: info.cern.ch[3] <BR>
+Here are links to some other very early sites:<P>
+-Stanford Linear Accelerator Center[4], the first US web server (now modernized).<BR>
+-DESY[5] (Germany, also physics lab)<BR>
+-NIKHEF[6] (Netherlands, physics, again)<BR>
+<!---[7]<BR>-->
+
+<BR><BR>MODERN SITES IN THIS BROWSER<BR><BR>
+While you have this ancient browser running, take the opportunity to have a look at your own homepage with it! (Use the "go http://www...." command, and don't forget to enter the full URL - old browsers don't automatically add the http:// part!)
+<P>
+If you don't have a website of your own, have a look at one of these!<P>
+[IMAGE]Yahoo[8]<BR>
+[IMAGE]Metamatrix[9]<BR>
+[IMAGE]Netscape[10]<BR>
+[IMAGE]Microsoft[11]<BR>
+[IMAGE]Amazon[12]<BR>
+[IMAGE]100 hot sites[13] of today
+<P>
+The real Linemode browser may be experienced through a telnet gateway running at the first web server ever[13].
+
+
+
+
+
+<SCRIPT LANGUAGE=javascript>
+
+<!--
+var destin=new Array(13+1);
+destin[1]="http://www.w3.org/History/19921103-hypertext/hypertext/WWW/LineMode/Browser.html"
+destin[2]="http://www.cern.ch/"
+destin[3]="http://info.cern.ch/"
+destin[4]="http://www.slac.stanford.edu/"
+destin[5]="http://www.desy.de/"
+destin[6]="http://www.nikhef.nl/"
+destin[7]="http://www.dejavu.org/"
+destin[8]="http://www.yahoo.com"
+destin[9]="http://www.metamatrix.se/eng/"
+destin[10]="http://www.netscape.com"
+destin[11]="http://www.microsoft.com"
+destin[12]="http://www.amazon.com"
+destin[13]="http://www.100hot.com/directory/100hot/"
+destin[14]="telnet:info.cern.ch"
+
+function knata(nummer){
+if (destin[nummer].indexOf("telnet") == 0) var till = destin[nummer];
+else var till = "/cgi-bin/get.cgi?ver=linemode&url="+destin[nummer];
+top.frames[0].location.href=till;
+}
+//-->
+
+</SCRIPT>
+</TT></BODY></HTML>
