@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<TITLE>Cern line-mode www browser</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#ffffff" LINK="#000000" ALINK="#ff0000" OnLoad="document.forms[0].inpo.focus();">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// Javascript by Par Lannero <pbb@metamatrix.se>
+// Part of www.dejavu.org browser emulator
+var nav4 = window.Event ? true : false;
+var mesgurl="http://www.dejavu.org/cgi-bin/linemode.cgi";
+var scripturl="/cgi-bin/get.cgi?ver=linemode&url=";
+var helpurl="http://www.dejavu.org/cgi-bin/help.cgi?adress=";
+var egenurl ="http://www.dejavu.org/1992b.htm";
+var hemurl ="http://www.dejavu.org/1992.htm";
+
+        function codes(e) {
+ //         if (nav4) // Navigator 4.0x
+ //           var whichCode = e.which
+ //         else 
+ //           var whichCode = e.keyCode
+ //	  var bokstav=String.fromCharCode(whichCode)
+ //	alert (bokstav);
+ 	}
+ // if (nav4)
+ //  document.captureEvents(Event.KEYPRESS);
+ // document.onkeypress = codes;
+
+function skicka(){
+var indata = document.forms[0].inpo.value.toLowerCase();
+var siffra = parseInt(indata)
+if (!isNaN(siffra))
+	top.frames[0].knata(siffra);
+else{
+	if(indata == "b" || indata == "back") top.frames[0].history.go(-1);
+	else{
+		if (indata == "help" || indata == "h") top.frames[0].document.location.href=helpurl+top.frames[0].document.location.search.split("=")[2]+"&titel="+escape(top.frames[0].document.title);
+//		if (indata == "help" || indata == "h") top.frames[0].document.location.href="1992help.htm";
+//		if (indata == "help" || indata == "h") alert(top.frames[0].document.adress.value);
+		else{				
+			if (indata == "quit" || indata == "q") top.close();
+			else{
+				if (indata == "home" || indata == "ho") top.frames[0].document.location.href=scripturl+hemurl;
+				else{
+				var newplace = document.forms[0].inpo.value.split(" ");				
+//				if (document.forms[0].inpo.value.indexOf("g")==0){top.frames[0].document.location.href=scripturl+newplace[1];
+				if (newplace[0]=="g" || newplace[0]=="go"){top.frames[0].document.location.href=scripturl+newplace[1];
+				
+return false;
+}
+				if (document.forms[0].inpo.value != ""){ 
+					meddelande = "Warning: Bad command, for list of commands type help. ("+document.forms[0].inpo.value +"\)";
+					document.location.href=mesgurl+"\?medd="+escape(meddelande);
+	return false;
+				}
+			}}
+		}
+	}
+}
+document.location.href=egenurl;
+//document.forms[0].inpo.value="";
+//document.forms[0].inpo.focus;
+return false
+}
+
+//-->
+</SCRIPT>
+<!--RESPONSE-->
+<TT><FORM OnSubmit="return skicka();">1-2, Back, Quit, or Help: <INPUT NAME="inpo" TYPE=text VALUE="" SIZE=15><!--onKeyPress="codes(event)"--><!--BLINK>_</BLINK--></FORM></TT>
+</BODY>
+</HTML>
